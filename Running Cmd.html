@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sqps-Gcoec | Developer Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Slate & Sky Blue -->
+    <!-- Application Structure Plan: A single-page vertical layout with a sticky top navigation bar. The structure is task-oriented, guiding the user logically from understanding the project ('About', 'Tech Stack') to practical application ('Setup', 'Run', 'Deployment'). This linear flow is the most intuitive way to present a developer guide. Key interactions include smooth scrolling, a tabbed interface for setup steps, and copy-to-clipboard buttons for commands, all designed to make the setup process as frictionless as possible. -->
+    <!-- Visualization & Content Choices: 
+        - Project Purpose -> Goal: Inform -> Presentation: Clean text section -> Interaction: None -> Justification: Simple, direct explanation of the project's value.
+        - Tech Stack -> Goal: Organize -> Presentation: Grid of cards with icons (Unicode) -> Interaction: Hover effect on cards -> Justification: Visually appealing and quickly scannable way to present the core technologies.
+        - Setup Commands -> Goal: Instruct -> Presentation: Tabbed code blocks -> Interaction: Clickable tabs (Backend/Frontend) and a 'Copy' button for each command -> Justification: Organizes setup steps clearly and allows for easy, error-free copying of commands, which is a critical user need.
+        - Deployment Flow -> Goal: Organize -> Presentation: Numbered horizontal step diagram (HTML/CSS) -> Interaction: Hover effect -> Justification: Visualizes the multi-step deployment process in a simple, linear fashion that is easy to follow.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link.active { color: #0ea5e9; }
+        .tab.active { background-color: #0ea5e9; color: white; }
+        .code-block { position: relative; }
+        .copy-btn { position: absolute; top: 0.5rem; right: 0.5rem; opacity: 0; transition: opacity 0.2s; }
+        .code-block:hover .copy-btn { opacity: 1; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+
+    <header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-sky-500">Sqps-Gcoec Guide</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-sky-500">About</a>
+                        <a href="#tech-stack" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-sky-500">Tech Stack</a>
+                        <a href="#setup" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-sky-500">Setup</a>
+                        <a href="#run" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-sky-500">Run</a>
+                        <a href="#deployment" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-sky-500">Deployment</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <section id="about" class="mb-24">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white">Smart Question Paper Search for Gcoe Chandrapur</h1>
+                
+                <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">An interactive web application designed for students to easily upload, search, and find academic materials like question papers, notes, and solutions, complete with an admin panel for content verification.</p>
+            </div>
+        </section>
+
+        <section id="tech-stack" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12">Technology Stack</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-semibold mb-2">Backend</h3>
+                    <p class="text-slate-500 dark:text-slate-400">Node.js & Express.js for a robust server and API.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h3 class="text-xl font-semibold mb-2">Frontend</h3>
+                    <p class="text-slate-500 dark:text-slate-400">React with Vite for a fast, modern user interface.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+                    <div class="text-4xl mb-4">🗃️</div>
+                    <h3 class="text-xl font-semibold mb-2">Database</h3>
+                    <p class="text-slate-500 dark:text-slate-400">MongoDB with Mongoose for flexible data storage.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+                    <div class="text-4xl mb-4">📄</div>
+                    <h3 class="text-xl font-semibold mb-2">File Storage</h3>
+                    <p class="text-slate-500 dark:text-slate-400">Bytescale (Upload.io) for direct, reliable file uploads.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="setup" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12">Local Setup Guide</h2>
+            <div class="max-w-3xl mx-auto bg-white dark:bg-slate-800 rounded-lg shadow-md">
+                <div class="p-4 border-b border-slate-200 dark:border-slate-700">
+                    <div class="flex space-x-2">
+                        <button class="tab active px-4 py-2 text-sm font-semibold rounded-md" data-tab="backend-setup">Backend Setup</button>
+                        <button class="tab px-4 py-2 text-sm font-semibold rounded-md text-slate-600 dark:text-slate-400" data-tab="frontend-setup">Frontend Setup</button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div id="backend-setup" class="setup-content">
+                        <p class="mb-4">Navigate to the `backend` directory and install the necessary packages.</p>
+                        <div class="code-block">
+                            <pre><code class="language-bash block bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 rounded-md p-4 overflow-x-auto">cd backend
+npm install</code></pre>
+                            <button class="copy-btn bg-slate-200 dark:bg-slate-700 text-xs font-semibold px-2 py-1 rounded-md">Copy</button>
+                        </div>
+                        <p class="mt-4">Create a `.env` file in the `backend` folder and add your MongoDB connection string and a secret admin password.</p>
+                        <div class="code-block">
+                             <pre><code class="language-bash block bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 rounded-md p-4 overflow-x-auto">MONGO_URI=your_mongodb_connection_string
+ADMIN_PASSWORD=your_secret_password</code></pre>
+                             <button class="copy-btn bg-slate-200 dark:bg-slate-700 text-xs font-semibold px-2 py-1 rounded-md">Copy</button>
+                        </div>
+                    </div>
+                    <div id="frontend-setup" class="setup-content hidden">
+                        <p class="mb-4">Navigate to the `frontend` directory and install the packages.</p>
+                         <div class="code-block">
+                            <pre><code class="language-bash block bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 rounded-md p-4 overflow-x-auto">cd frontend
+npm install</code></pre>
+                            <button class="copy-btn bg-slate-200 dark:bg-slate-700 text-xs font-semibold px-2 py-1 rounded-md">Copy</button>
+                        </div>
+                        <p class="mt-4">In `frontend/src/pages/AddPaperPage.jsx`, replace placeholders with your Bytescale Account ID and Public API Key.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="run" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12">How to Run the Application</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">1. Run the Backend Server</h3>
+                    <p class="mb-4">In a terminal, navigate to the `backend` folder and run:</p>
+                    <div class="code-block">
+                        <pre><code class="language-bash block bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 rounded-md p-4">node server.js</code></pre>
+                        <button class="copy-btn bg-slate-200 dark:bg-slate-700 text-xs font-semibold px-2 py-1 rounded-md">Copy</button>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">2. Run the Frontend App</h3>
+                    <p class="mb-4">In a **second** terminal, navigate to the `frontend` folder and run:</p>
+                    <div class="code-block">
+                        <pre><code class="language-bash block bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 rounded-md p-4">npm run dev</code></pre>
+                        <button class="copy-btn bg-slate-200 dark:bg-slate-700 text-xs font-semibold px-2 py-1 rounded-md">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deployment" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12">Deployment Flow</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8">
+                    <div class="text-center">
+                        <div class="w-24 h-24 flex items-center justify-center mx-auto bg-sky-100 dark:bg-sky-900/50 rounded-full text-3xl">🗃️</div>
+                        <h3 class="mt-4 text-lg font-semibold">1. Deploy Database</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Move local database to a free MongoDB Atlas cluster.</p>
+                    </div>
+                    <div class="text-2xl text-slate-400 dark:text-slate-600 transform md:-rotate-90">→</div>
+                    <div class="text-center">
+                        <div class="w-24 h-24 flex items-center justify-center mx-auto bg-sky-100 dark:bg-sky-900/50 rounded-full text-3xl">⚙️</div>
+                        <h3 class="mt-4 text-lg font-semibold">2. Deploy Backend</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Host the Node.js server on Render from a GitHub repo.</p>
+                    </div>
+                     <div class="text-2xl text-slate-400 dark:text-slate-600 transform md:-rotate-90">→</div>
+                    <div class="text-center">
+                        <div class="w-24 h-24 flex items-center justify-center mx-auto bg-sky-100 dark:bg-sky-900/50 rounded-full text-3xl">🎨</div>
+                        <h3 class="mt-4 text-lg font-semibold">3. Deploy Frontend</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Host the React app on Vercel from a GitHub repo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const tabs = document.querySelectorAll('.tab');
+            const setupContents = document.querySelectorAll('.setup-content');
+            const copyBtns = document.querySelectorAll('.copy-btn');
+
+            function updateActiveNav() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelector(link.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            window.addEventListener('scroll', updateActiveNav);
+            updateActiveNav();
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.getAttribute('data-tab');
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    setupContents.forEach(content => {
+                        content.classList.toggle('hidden', content.id !== targetId);
+                    });
+                });
+            });
+
+            copyBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const code = btn.previousElementSibling.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        btn.innerText = 'Copied!';
+                        setTimeout(() => { btn.innerText = 'Copy'; }, 2000);
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* --- Inter Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* --- Theme Variables (Light & Dark) --- */
+[data-bs-theme="light"] {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --card-border: #dee2e6;
+    --primary-color: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --subtitle-color: #6c757d;
+}
+
+[data-bs-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e9ecef;
+    --card-bg: #1e1e1e;
+    --card-border: #444;
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --subtitle-color: #adb5bd;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Centered Homepage Layout --- */
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 72px); /* Full height minus navbar */
+    padding: 2rem 1rem;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 900px; /* Wider search box */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.results-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- General Styling --- */
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--subtitle-color);
+    margin-bottom: 2rem;
+}
+
+.paper-card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paper-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.empty-state {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+}
+
+/* --- Form Styling --- */
+.form-container {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    color: var(--subtitle-color);
+    margin-bottom: 2rem;
+}
+
+.app-navbar {
+    background-color: var(--card-bg) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Admin Login Link on Homepage */
+.admin-login-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.9rem;
+}
